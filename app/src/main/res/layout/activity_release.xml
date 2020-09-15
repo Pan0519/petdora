@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".release">
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="34dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginLeft="28dp"
+                    android:src="?attr/actionModeCloseDrawable"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/back"
+                    style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                    android:layout_width="69dp"
+                    android:layout_height="67dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="5dp"
+                    android:bufferType="normal"
+                    android:text="返回"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="394dp"
+        android:layout_height="606dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="382dp"
+            android:layout_height="42dp"
+            android:hint="請輸入活動標題" />
+
+        <TableRow
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/開始活動日期"
+                android:layout_width="198dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="請輸入開始日期"
+                android:importantForAutofill="no"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/結束活動日期"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="請輸入結束日期"
+                android:inputType="date" />
+        </TableRow>
+
+        <TableLayout
+            android:id="@+id/where1"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="68dp">
+
+            <TableRow
+                android:layout_width="314dp"
+                android:layout_height="22dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/where2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="請輸入舉辦地點"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="textPostalAddress"
+                        tools:layout_editor_absoluteY="20dp"
+                        tools:ignore="MissingConstraints" />
+
+                    <Button
+                        android:id="@+id/pic"
+                        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                        android:layout_width="38dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@android:drawable/ic_menu_mylocation"
+                        android:bufferType="normal"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/where2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <EditText
+            android:id="@+id/活動內容"
+            android:layout_width="366dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="請輸入活動內容"
+            android:inputType="textMultiLine" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="172dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/添加圖片"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="可以添加圖片："
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="16dp"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="112dp"
+                    android:layout_height="119dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="40dp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </TableRow>
+
+        <TableLayout
+            android:id="@+id/howmuch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/參加人數"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="參加人數："
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="97dp"
+                    android:layout_height="match_parent"
+                    android:text="1~10人" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:text="11~20人" />
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="無限制" />
+            </TableRow>
+
+        </TableLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="102dp">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="384dp"
+                android:layout_height="67dp"
+                android:background="@color/colorPrimary"
+                android:text="發佈活動"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="7dp"
+                tools:layout_editor_absoluteY="19dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
