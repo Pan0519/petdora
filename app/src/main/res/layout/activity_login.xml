@@ -8,93 +8,94 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="223dp"
-        android:layout_height="156dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/j" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:srcCompat="@drawable/j"
+        tools:ignore="MissingConstraints"
+        />
 
     <EditText
         android:id="@+id/id"
-        android:layout_width="288dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="70dp"
+        app:layout_constraintHorizontal_weight="1"
         android:ems="10"
-        android:hint="帳號"
+        android:hint="@string/account"
         android:inputType="textPersonName"
         android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
         android:id="@+id/pwd"
-        android:layout_width="283dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="37dp"
+        app:layout_constraintHorizontal_weight="1"
         android:ems="10"
-        android:hint="密碼"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id" />
+
+    <TextView
+        android:id="@+id/yesnull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:text="@string/input_tip"
+        android:textSize="25dp"
+        android:textColor="#FF2D2D"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/pwd" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="208dp"
         android:layout_height="52dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="38dp"
+        app:layout_constraintHorizontal_weight="1"
         android:background="@android:color/holo_blue_dark"
-        android:text="登入"
+        android:text="@string/btn_login"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yesnull" />
 
-    <TextView
-        android:id="@+id/forget"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="97dp"
-        android:layout_marginLeft="97dp"
-        android:layout_marginTop="27dp"
-        android:clickable="true"
-        android:text="忘記密碼"
-        android:textSize="30dp"
-        app:layout_constraintStart_toEndOf="@+id/register"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/login">
 
-    <TextView
-        android:id="@+id/register"
-        android:layout_width="71dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="28dp"
-        android:clickable="true"
-        android:text="註冊"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="@string/register"
+            android:textSize="30sp"
+            />
 
-    <TextView
-        android:id="@+id/yesnull"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginLeft="136dp"
-        android:layout_marginTop="39dp"
-        android:text="TextView"
-        android:textSize="25dp"
-        android:textColor="#FF2D2D"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+        <TextView
+            android:id="@+id/forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="@string/forget_psd"
+            android:textSize="30sp"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
