@@ -6,39 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".fragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="412dp"
-        android:layout_height="126dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kl" />
-
-    <ImageButton
-        android:id="@+id/search"
-        android:layout_width="53dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:background="#00000000"
-        android:src="@android:drawable/ic_menu_search"
-        app:layout_constraintEnd_toEndOf="@id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/recommon" />
-
     <Button
         android:id="@+id/recommon"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="8dp"
         android:background="#00FF9800"
         android:bufferType="normal"
-        android:text="推薦"
+        android:text="@string/recommon"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/local"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -47,195 +25,92 @@
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="264dp"
-        android:layout_marginRight="264dp"
         android:bufferType="normal"
-        android:text="附近"
+        android:text="@string/local"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recommon"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
-        android:id="@+id/act1"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="170dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:background="@color/colorPrimary"
-        android:bufferType="normal"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/act2"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <Button
-        android:id="@+id/act2"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="170dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:background="@color/colorPrimary"
-        android:bufferType="normal"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search" />
-
-    <Button
-        android:id="@+id/act4"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="170dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:background="@color/colorPrimary"
-        android:bufferType="normal"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/act2" />
-
-    <Button
-        android:id="@+id/act3"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="170dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:background="@color/colorPrimary"
-        android:bufferType="normal"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/act4"
-        app:layout_constraintTop_toBottomOf="@+id/act1" />
-
-    <Button
-        android:id="@+id/back"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="94dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/c"
-        android:bufferType="normal"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/send"
-        app:layout_constraintTop_toBottomOf="@+id/act4" />
 
     <Button
         android:id="@+id/personal"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="98dp"
-        android:layout_height="99dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/m"
         android:bufferType="normal"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/act3" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/send"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/send"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="94dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/h"
         android:bufferType="normal"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/personal"
-        app:layout_constraintTop_toBottomOf="@+id/act4" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/back"
+        app:layout_constraintStart_toEndOf="@+id/personal" />
 
-    <TextView
-        android:id="@+id/title"
+    <Button
+        android:id="@+id/back"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginTop="8dp"
-        android:text="柴犬馬拉松GO"
-        android:textColor="#000000"
+        android:background="@drawable/c"
+        android:bufferType="normal"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/act1"
-        app:layout_constraintTop_toTopOf="@+id/act1" />
-
-    <TextView
-        android:id="@+id/context"
-        android:layout_width="136dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="12dp"
-        android:text="馬上要過年了！趕緊運動一下才能..."
-        android:textColor="#070000"
-        app:layout_constraintStart_toStartOf="@id/act1"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
-
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="128dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="12dp"
-        android:text="地址：高雄大學"
-        android:textColor="#070000"
-        app:layout_constraintStart_toStartOf="@id/act1"
-        app:layout_constraintTop_toBottomOf="@+id/sender" />
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="47dp"
-        android:layout_height="14dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:text="2020/01/08"
-        android:textColor="#070000"
-        android:textSize="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/act1"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <TextView
-        android:id="@+id/sender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="16dp"
-        android:text="發佈人:卡路里"
-        android:textColor="#070000"
-        app:layout_constraintStart_toStartOf="@id/act1"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/send" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="327dp"
-        android:layout_height="42dp"
+        android:id="@+id/search_editTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
+        android:layout_marginEnd="46dp"
         android:background="#90BBBBBB"
         android:ems="10"
-        android:hint="輸入搜尋"
+        android:hint="@string/input_search"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/local" />
+        app:layout_constraintBottom_toBottomOf="@id/search"
+        app:layout_constraintTop_toTopOf="@id/search" />
 
+    <GridView
+        android:id="@+id/activity_gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        app:layout_constraintBottom_toTopOf="@id/personal"
+        app:layout_constraintTop_toBottomOf="@id/search">
+
+    </GridView>
+
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_search"
+        app:layout_constraintEnd_toEndOf="@+id/search_editTxt"
+        app:layout_constraintTop_toBottomOf="@+id/recommon" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
