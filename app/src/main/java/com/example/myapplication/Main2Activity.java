@@ -14,7 +14,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        ImageButton pick= findViewById(R.id.imageButton);
+        ImageButton pick= findViewById(R.id.imgbtn_1);
         pick.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -23,7 +23,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         });
-        ImageButton pick1= findViewById(R.id.imageButton3);
+        ImageButton pick1= findViewById(R.id.imgbtn_3);
         pick1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -32,7 +32,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         });
-        ImageButton pick2= findViewById(R.id.imageButton4);
+        ImageButton pick2= findViewById(R.id.imgbtn_4);
         pick2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -41,7 +41,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         });
-        ImageButton pick3= findViewById(R.id.imageButton5);
+        ImageButton pick3= findViewById(R.id.imgbtn_5);
         pick3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

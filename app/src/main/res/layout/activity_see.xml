@@ -16,7 +16,7 @@
         android:background="#00FFFFFF"
         android:tint="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintStart_toEndOf="@+id/imgbtn_3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_share" />
 
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imgbtn_3"
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:layout_marginStart="4dp"

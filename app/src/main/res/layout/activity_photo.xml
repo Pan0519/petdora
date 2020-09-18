@@ -174,7 +174,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/imgbtn_3"
                     android:layout_width="135dp"
                     android:layout_height="120dp"
                     android:layout_marginStart="60dp"
@@ -183,12 +183,12 @@
                     android:layout_marginEnd="21dp"
                     android:layout_marginRight="21dp"
                     android:background="@drawable/cute"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+                    app:layout_constraintEnd_toStartOf="@+id/imgbtn_4"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/one" />
 
                 <ImageButton
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/imgbtn_4"
                     android:layout_width="135dp"
                     android:layout_height="120dp"
                     android:layout_marginStart="20dp"

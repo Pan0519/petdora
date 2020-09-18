@@ -17,7 +17,7 @@ public class photo extends AppCompatActivity {
 
 
 
-        ImageButton photo= findViewById(R.id.imageButton3);
+        ImageButton photo= findViewById(R.id.imgbtn_3);
         photo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -26,7 +26,7 @@ public class photo extends AppCompatActivity {
             }
 
         });
-        ImageButton photo1= findViewById(R.id.imageButton4);
+        ImageButton photo1= findViewById(R.id.imgbtn_4);
         photo1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

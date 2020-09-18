@@ -10,4 +10,8 @@
     <string name="recommon">推薦</string>
     <string name="local">附近</string>
     <string name="input_search">輸入搜尋</string>
+
+    <string name="lottery">抽</string>
+    <string name="back">返回</string>
+    <string name="draw_card">選禮物抽好友吧!</string>
 </resources>
