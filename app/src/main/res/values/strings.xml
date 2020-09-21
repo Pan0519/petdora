@@ -14,4 +14,6 @@
     <string name="lottery">抽</string>
     <string name="back">返回</string>
     <string name="draw_card">選禮物抽好友吧!</string>
+    <string name="add_friend">加好友</string>
+    <string name="chat">聊天</string>
 </resources>
