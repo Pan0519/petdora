@@ -27,13 +27,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class login extends AppCompatActivity implements View.OnClickListener {
 
     static String[] user_email, user_pwd, name;
     static Long[] uid;
+
     static Long loginid;
-    static int i; //資料庫長度
     String userid;
+    public List<userInfo> userInfos = new ArrayList<>();
 
     @BindView(R.id.login)  Button login;
     @BindViews(R.id.id) EditText id;
@@ -44,20 +49,15 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         ButterKnife.bind(this);
         user_email = new String[1000];
         user_pwd = new String[1000];
         uid = new Long[1000];
         name = new String[1000];
+       
         TextView bb = findViewById(R.id.forget);
-        bb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent change = new Intent(login.this, tryy.class);
-                startActivity(change);
-            }
-
-        });
+        bb.setOnClickListener(this);
 
         /*忘記密碼，未寫完!*/
         yesnull.setText("");
@@ -68,54 +68,64 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            i = 0;
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                // Log.d("HII", i+":"+document.getId() + " => " + document.getString("petname"));
-                                user_email[i] = document.getString("email");
-                                user_pwd[i] = document.getString("pwd");
-                                uid[i] = document.getLong("uid");
-                                name[i] = document.getString("name");
-                                Log.d("22", i + ":" + user_email[i]);
-                                Log.d("22", i + ":" + user_pwd[i]);
-                                i++;
-                            }
-                        } else {
+                        if (!task.isSuccessful()) {
                             Log.w("000", "Error getting documents.", task.getException());
+                            return;
+                        }
+
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            userInfos.add(new userInfo(document));
                         }
                     }
                 });
         login.setOnClickListener(this);
     }
 
-
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
             case R.id.login:
-                int right = 0;
                 if (id.getText().toString().isEmpty() || pwd.getText().toString().isEmpty()) {
                     yesnull.setText(getResources().getString(R.string.input_tip));
-                } else {
-                    for (int x = 0; x <= i; x++) {
-                        if (id.getText().toString().equals(user_email[x]) && pwd.getText().toString().equals(user_pwd[x])) {
-                            right = 1;
-                            Intent pick = new Intent(login.this, photo.class);
-                            userid = id.getText().toString();
-                            loginid = uid[x];
-                            startActivity(pick);
-                        }
-                    }
-                    if (right != 1) {
-                        Intent pick = new Intent(login.this, tryy.class);
-                        startActivity(pick);
+                    return;
+                }
+
+                Intent pick = null;
+                for (userInfo info : userInfos) {
+                    if (info.mail.equals(id.getText()) && info.pwd.equals(pwd.getText())) {
+                        loginid = info.uid;
+                        userid = info.mail;
+                        pick = new Intent(login.this, photo.class);
+                        break;
                     }
                 }
 
+                if (pick == null) {
+                    pick = new Intent(login.this, Main2Activity.class);
+                }
+                startActivity(pick);
+                break;
 
+            case R.id.forget:
+                Intent change = new Intent(login.this, tryy.class);
+                startActivity(change);
+                break;
         }
+    }
+}
 
+class userInfo {
+    public String mail;
+    public String name;
+    public String pwd;
+    public Long uid;
+
+    public userInfo(QueryDocumentSnapshot info) {
+        uid = info.getLong("uid");
+        mail = info.getString("email");
+        pwd = info.getString("pwd");
+        name = info.getString("name");
     }
 }
 

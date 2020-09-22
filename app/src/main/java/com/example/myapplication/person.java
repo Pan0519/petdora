@@ -41,6 +41,7 @@ public class person extends AppCompatActivity {
         address=findViewById(R.id.address);
         context=findViewById(R.id.sender);
         date=findViewById(R.id.date);
+        final login _login = new login();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("active")
                 .get()
@@ -65,9 +66,16 @@ public class person extends AppCompatActivity {
                                     //act_context[i].substring(3,8);
                                     act_context[i]=act_context[i].substring(0,15)+"....";
                                     Log.d("22",i+":"+ x);
-                                    for(int z=0;z<=com.example.myapplication.login.i;z++){
-                                        if(postid[i]==com.example.myapplication.login.uid[z]){
-                                            act_sender[i]=com.example.myapplication.login.name[z];
+//                                    for(int z=0;z<=com.example.myapplication.login.i;z++){
+//                                        if(postid[i]==com.example.myapplication.login.uid[z]){
+//                                            act_sender[i]=com.example.myapplication.login.name[z];
+//                                        }
+//                                    }
+
+                                    for (userInfo info : _login.userInfos) {
+                                        if (postid[i] == info.uid) {
+                                            act_sender[i] = info.name;
+                                            break;
                                         }
                                     }
 

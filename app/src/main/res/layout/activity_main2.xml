@@ -6,47 +6,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageButton
         android:id="@+id/imgbtn_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gild_line"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_txt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/a1577339927127" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gild_line"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/a1577339967566" />
 
     <ImageButton
         android:id="@+id/imgbtn_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gild_line"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtn_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65"
         app:srcCompat="@drawable/a1577339903322" />
 
     <ImageButton
         android:id="@+id/imgbtn_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="456dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/a1577339947165" />
-
-    <ImageButton
-        android:id="@+id/imgbtn_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gild_line"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        app:srcCompat="@drawable/a1577339967566" />
+        app:layout_constraintVertical_bias="0.85"
+        app:srcCompat="@drawable/a1577339947165" />
 
     <TextView
         android:id="@+id/title_txt"
@@ -58,5 +60,13 @@
         android:textSize="50sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gild_line"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_light"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
