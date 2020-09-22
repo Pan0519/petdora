@@ -14,4 +14,12 @@
     <string name="lottery">抽</string>
     <string name="back">返回</string>
     <string name="draw_card">選禮物抽好友吧!</string>
+
+    <string name="first_page">首頁</string>
+    <string name="activity">活動</string>
+    <string name="translate">翻譯</string>
+    <string name="friend">好友</string>
+    <string name="personal">個人</string>
+    <string name="search">搜尋</string>
+    <string name="found">發現</string>
 </resources>

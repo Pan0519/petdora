@@ -2,6 +2,9 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import butterknife.BindView;
+import butterknife.BindViews;
+import butterknife.ButterKnife;
 import io.opencensus.internal.StringUtils;
 
 import android.content.Intent;
@@ -25,20 +28,23 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class login extends AppCompatActivity implements View.OnClickListener {
-    Button login;
-    EditText id;
-    EditText pwd;
-    TextView yesnull;
+
     static String[] user_email, user_pwd, name;
     static Long[] uid;
     static Long loginid;
     static int i; //資料庫長度
     String userid;
 
+    @BindView(R.id.login)  Button login;
+    @BindViews(R.id.id) EditText id;
+    @BindViews(R.id.pwd) EditText pwd;
+    @BindViews(R.id.yesnull) TextView yesnull;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
         user_email = new String[1000];
         user_pwd = new String[1000];
         uid = new Long[1000];
@@ -54,10 +60,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         });
 
         /*忘記密碼，未寫完!*/
-        yesnull = (TextView) findViewById(R.id.yesnull);
         yesnull.setText("");
-        id = (EditText) findViewById(R.id.id);
-        pwd = (EditText) findViewById(R.id.pwd);
         /*下面這段在寫登入，尚未連結資料庫，因此寫死*/
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("user")
@@ -82,9 +85,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                         }
                     }
                 });
-        login = (Button) findViewById(R.id.login);
         login.setOnClickListener(this);
-
     }
 
 
