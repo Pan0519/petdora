@@ -67,12 +67,11 @@ public class fragment extends AppCompatActivity {
                                 //act_context[i].substring(3,8);
                                 act_context[i] = act_context[i].substring(0, 15) + "....";
                                 Log.d("22", i + ":" + x);
-                                for (userInfo info : _login.userInfos) {
-                                    if (postid[i] == info.uid) {
-                                        act_sender[i] = info.name;
-                                        break;
-                                    }
+                                userInfo userInfo = UserInfoManager.getInstance().GetUserInfoByUid(postid[i]);
+                                if(userInfo!=null){
+                                    act_sender[i] = userInfo.getName();
                                 }
+
 //                                for (int z = 0; z <= com.example.myapplication.login.i; z++) {
 //                                    if (postid[i] == com.example.myapplication.login.uid(z)) {
 //                                        act_sender[i] = com.example.myapplication.login.name[z];

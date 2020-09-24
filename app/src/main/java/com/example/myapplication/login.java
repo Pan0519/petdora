@@ -33,17 +33,21 @@ import java.util.List;
 
 public class login extends AppCompatActivity implements View.OnClickListener {
 
-    static String[] user_email, user_pwd, name;
-    static Long[] uid;
+//    static String[] user_email, user_pwd, name;
+//    static Long[] uid;
 
     static Long loginid;
     String userid;
-    public List<userInfo> userInfos = new ArrayList<>();
 
-    @BindView(R.id.login)  Button login;
-    @BindViews(R.id.id) EditText id;
-    @BindViews(R.id.pwd) EditText pwd;
-    @BindViews(R.id.yesnull) TextView yesnull;
+
+    @BindView(R.id.login)
+    Button login;
+    @BindView(R.id.id)
+    EditText id;
+    @BindView(R.id.pwd)
+    EditText pwd;
+    @BindView(R.id.yesnull)
+    TextView yesnull;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +55,11 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_login);
 
         ButterKnife.bind(this);
-        user_email = new String[1000];
-        user_pwd = new String[1000];
-        uid = new Long[1000];
-        name = new String[1000];
-       
+//        user_email = new String[1000];
+//        user_pwd = new String[1000];
+//        uid = new Long[1000];
+//        name = new String[1000];
+
         TextView bb = findViewById(R.id.forget);
         bb.setOnClickListener(this);
 
@@ -73,9 +77,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                             return;
                         }
 
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            userInfos.add(new userInfo(document));
-                        }
+                        UserInfoManager.getInstance().SetUserInfos(task.getResult());
                     }
                 });
         login.setOnClickListener(this);
@@ -92,10 +94,11 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 }
 
                 Intent pick = null;
-                for (userInfo info : userInfos) {
-                    if (info.mail.equals(id.getText()) && info.pwd.equals(pwd.getText())) {
-                        loginid = info.uid;
-                        userid = info.mail;
+                List<userInfo> infos = UserInfoManager.getInstance().GetUserInfos();
+                for (userInfo info : infos) {
+                    if (info.getMail().equals(id.getText()) && info.getPwd().equals(pwd.getText())) {
+                        loginid = info.getUid();
+                        userid = info.getMail();
                         pick = new Intent(login.this, photo.class);
                         break;
                     }
@@ -115,17 +118,4 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     }
 }
 
-class userInfo {
-    public String mail;
-    public String name;
-    public String pwd;
-    public Long uid;
-
-    public userInfo(QueryDocumentSnapshot info) {
-        uid = info.getLong("uid");
-        mail = info.getString("email");
-        pwd = info.getString("pwd");
-        name = info.getString("name");
-    }
-}
 

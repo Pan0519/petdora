@@ -16,8 +16,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class person extends AppCompatActivity {
     Button act;
@@ -72,11 +74,9 @@ public class person extends AppCompatActivity {
 //                                        }
 //                                    }
 
-                                    for (userInfo info : _login.userInfos) {
-                                        if (postid[i] == info.uid) {
-                                            act_sender[i] = info.name;
-                                            break;
-                                        }
+                                    userInfo userInfo = UserInfoManager.getInstance().GetUserInfoByUid(postid[i]);
+                                    if(userInfo!=null){
+                                        act_sender[i] = userInfo.getName();
                                     }
 
                                     title.setText(act_title[i]);
